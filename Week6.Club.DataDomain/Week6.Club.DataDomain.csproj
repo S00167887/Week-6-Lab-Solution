@@ -67,8 +67,8 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EmbeddedResource Include="Week 6 Model\StudentList1.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <EmbeddedResource Include="StudentList1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

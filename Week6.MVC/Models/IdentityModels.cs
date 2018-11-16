@@ -22,7 +22,7 @@ namespace Week6.MVC.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Week6Connection", throwIfV1Schema: false)
         {
         }
 

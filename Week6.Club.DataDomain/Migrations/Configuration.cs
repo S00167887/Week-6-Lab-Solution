@@ -26,13 +26,31 @@ namespace Week6.Club.DataDomain.Migrations
             //  to avoid creating duplicate seed data.
             seed_Db_students(context);
             seed_Db_model(context);
+            seed_Db_ClubMembers(context);
+            // Seeding of Club admin and Member roles will be done in the other Applictaion DB context
         }
+
+        private void seed_Db_ClubMembers(ClubContext context)
+        {
+            Club firstClub = context.Clubs.First();
+            // Make an array of members from the first 10 selected students
+            Member[] NewMembers = context.Students
+                .Take(10).ToList()
+                .Select(s => // Making the Member output
+                new Member { StudentID =s.StudentID,
+                    approved = false,
+                    AssociatedClub = firstClub.ClubId  })
+                .ToArray() ;
+            context.ClubMembers.AddOrUpdate(c => c.StudentID,
+                NewMembers);
+        }
+
         private void seed_Db_students(ClubContext context)
         {
             List<Student> students = new List<Student>();
             Assembly assembly = Assembly.GetExecutingAssembly();
 
-            string resourceName = "ClubDomain.Classes.StudentList1.csv";
+            string resourceName = "Week6.Club.DataDomain.StudentList1.csv";
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {
                 using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
@@ -55,7 +73,8 @@ namespace Week6.Club.DataDomain.Migrations
             CultureInfo cultureinfo = CultureInfo.CreateSpecificCulture("en-IE");
             context.Clubs.AddOrUpdate(new Club[]
             {
-                new Club{ ClubName="The Chess Club", CreationDate = DateTime.ParseExact("25/01/2017","dd/mm/yyyy",cultureinfo),
+                new Club{ ClubName="The Chess Club",
+                    CreationDate = DateTime.ParseExact("25/01/2017","dd/mm/yyyy",cultureinfo),
                 }, // End of Club
             } // End of Clubs
             );

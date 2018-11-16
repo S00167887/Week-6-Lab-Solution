@@ -292,6 +292,12 @@
       <DependentUpon>201810232239260_Entity ID field added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Week6.Club.DataDomain\Week6.Club.DataDomain.csproj">
+      <Project>{3e0ae9fb-8733-4996-afe6-2e1553bfe30b}</Project>
+      <Name>Week6.Club.DataDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
