@@ -1,4 +1,4 @@
-namespace Week6.Club.DataDomain.Migrations
+namespace Week6.DataDomain.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

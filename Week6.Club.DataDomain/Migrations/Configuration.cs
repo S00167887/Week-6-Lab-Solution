@@ -1,4 +1,4 @@
-namespace Week6.Club.DataDomain.Migrations
+namespace Week6.DataDomain.Migrations
 {
     using CsvHelper;
     using System;
@@ -11,14 +11,14 @@ namespace Week6.Club.DataDomain.Migrations
     using System.Reflection;
     using System.Text;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Week6.Club.DataDomain.ClubContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Week6.DataDomain.ClubContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Week6.Club.DataDomain.ClubContext context)
+        protected override void Seed(Week6.DataDomain.ClubContext context)
         {
             //  This method will be called after migrating to the latest version.
 

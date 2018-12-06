@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Week6.Club.DataDomain
+namespace Week6.DataDomain
 {
     public class Student
     {

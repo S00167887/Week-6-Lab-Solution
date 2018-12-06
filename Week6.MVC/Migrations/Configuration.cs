@@ -7,7 +7,7 @@ namespace Week6.MVC.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using Week6.Club.DataDomain;
+    using Week6.DataDomain;
     using Week6.MVC.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Week6.MVC.Models.ApplicationDbContext>
